@@ -1,0 +1,58 @@
+.dashboard-content {
+  .main-content {
+    margin: 0px 16px;
+  }
+
+  .inner-content {
+    padding: 24px;
+    min-height: 360px;
+    background: rgb(255, 255, 255);
+
+    .v-divider {
+      margin: 10px 0;
+    }
+
+    .card-body {
+      padding: 12px;
+
+      .text {
+        padding: 0;
+      }
+
+      .label {
+        font-size: 14px;
+        color: rgb(199, 199, 199);
+      }
+    }
+
+    .icon-wrapper {
+      width: 45px;
+      height: 45px;
+      border-radius: 50% !important;
+      background: rgb(228, 244, 252);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      i {
+        color: rgb(0, 158, 220);
+        font-size: 20px;
+      }
+    }
+  }
+
+  .radialbar-chart-area {
+    h6 {
+      min-height: 48px;
+      line-height: 1.2;
+    }
+  }
+
+  .footer-content {
+    padding: 24px 50px;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    background: #f0f2f5;
+  }
+}
