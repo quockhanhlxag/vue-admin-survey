@@ -14,7 +14,7 @@
                     <v-card-text class="text">
                       <div class="label">Tổng ASO</div>
                       <div class="text-h5 text--primary">
-                        {{ statistics.total }}
+                        {{ statisticsData.total }}
                       </div>
                     </v-card-text>
                     <v-list-item-icon class="icon-wrapper ml-0">
@@ -27,7 +27,7 @@
                     <v-card-text class="text">
                       <div class="label">Đã khảo sát</div>
                       <div class="text-h5 text--primary">
-                        {{ statistics.audited }}
+                        {{ statisticsData.audited }}
                       </div>
                     </v-card-text>
                     <v-list-item-icon class="icon-wrapper ml-0">
@@ -40,7 +40,7 @@
                     <v-card-text class="text">
                       <div class="label">Chưa khảo sát</div>
                       <div class="text-h5 text--primary">
-                        {{ statistics.rejected }}
+                        {{ statisticsData.total - statisticsData.audited }}
                       </div>
                     </v-card-text>
                     <v-list-item-icon class="icon-wrapper ml-0">
@@ -51,7 +51,12 @@
               </v-row>
             </v-container>
             <v-container fluid class="pie-chart-area">
-              <pie-chart :series="[statistics.total, statistics.rejected]" />
+              <pie-chart
+                :series="[
+                  statisticsData.audited,
+                  statisticsData.total - statisticsData.audited,
+                ]"
+              />
             </v-container>
             <v-divider></v-divider>
             <v-container class="col-chart-area" fluid>
@@ -110,7 +115,7 @@
 
 <script>
 import NavDrawer from "../components/NavDrawer";
-import { BASE_URL } from "../urls/config";
+import { BASE_URL } from "../services/urls";
 import request from "../services/requests";
 import PieChart from "../components/PieChart.vue";
 import AuditColChart from "../components/AuditColChart.vue";
@@ -120,7 +125,7 @@ import RadialBarChart from "../components/RadialBarChart.vue";
 export default {
   data() {
     return {
-      statistics: {},
+      statisticsData: {},
     };
   },
   computed: {
@@ -144,7 +149,7 @@ export default {
     getStatisticData: async function () {
       try {
         const response = await request.get(`${BASE_URL}/store/statistic`);
-        this.statistics = response.data.data;
+        this.statisticsData = response.data.data;
       } catch (e) {
         console.log(e);
       }
@@ -157,4 +162,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.dashboard-content {
+  .radialbar-chart-area {
+    h6 {
+      min-height: 48px;
+      line-height: 1.2;
+    }
+  }
+}
+</style>

@@ -9,3 +9,108 @@ a {
 .v-application .text-h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
+
+.dashboard-content,
+.store-content,
+.survey-content {
+  .main-content {
+    margin: 0px 16px;
+  }
+
+  .inner-content {
+    padding: 24px;
+    min-height: 360px;
+    background: rgb(255, 255, 255);
+
+    .v-divider {
+      margin: 10px 0;
+    }
+
+    .card-body {
+      padding: 12px;
+
+      .text {
+        padding: 0;
+      }
+
+      .label {
+        font-size: 14px;
+        color: rgb(199, 199, 199);
+      }
+    }
+
+    .icon-wrapper {
+      width: 45px;
+      height: 45px;
+      border-radius: 50% !important;
+      background: rgb(228, 244, 252);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      i {
+        color: rgb(0, 158, 220);
+        font-size: 20px;
+      }
+    }
+
+    .store-table-wrapper,
+    .survey-table-wrapper {
+      padding-top: 20px;
+    }
+
+    .search-field {
+      margin-bottom: 30px;
+    }
+
+    thead {
+      th {
+        font-weight: 500;
+        background: #fafafa;
+        font-size: 16px !important;
+        padding: 16px !important;
+      }
+    }
+
+    tbody {
+      td {
+        padding: 16px !important;
+      }
+
+      .approved,
+      .not-audit {
+        font-size: 12px;
+        padding: 0 7px;
+        white-space: nowrap;
+        border: 1px solid #d9d9d9;
+      }
+
+      .approved {
+        color: #389e0d;
+        background: #f6ffed;
+        border-color: #b7eb8f;
+      }
+
+      .not-audit {
+        color: #096dd9;
+        background: #e6f7ff;
+        border-color: #91d5ff;
+      }
+
+      .await-audit {
+        color: #d46b08;
+        background: #fff7e6;
+        border-color: #ffd591;
+      }
+    }
+
+  }
+
+  .footer-content {
+    padding: 24px 50px;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    background: #f0f2f5;
+  }
+}

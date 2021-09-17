@@ -45,6 +45,11 @@ export default {
           path: "/admin/dashboard",
         },
         { title: "Danh sách cửa hàng", icon: "mdi-home", path: "/admin/store" },
+        {
+          title: "Kết quả Audit",
+          icon: "mdi-clipboard-list-outline",
+          path: "/admin/audit",
+        },
       ],
       right: null,
       drawer: false,

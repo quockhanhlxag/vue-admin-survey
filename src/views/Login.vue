@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { BASE_URL } from "../urls/config";
+import { BASE_URL } from "../services/urls";
 import request from "../services/requests";
 export default {
   data: () => ({

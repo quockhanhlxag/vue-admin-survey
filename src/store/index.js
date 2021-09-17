@@ -10,7 +10,7 @@ export default new Vuex.Store({
   },
   getters: {
     isLoggedIn: (state) => !!state.token,
-    getUser: (state) => {
+    userData: (state) => {
       return state.user;
     },
   },
