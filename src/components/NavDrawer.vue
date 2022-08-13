@@ -20,9 +20,19 @@
               </v-list-item>
             </router-link>
           </div>
+          <router-link v-if="isAdmin" to="/admin/user_management">
+            <v-list-item link>
+              <v-list-item-icon>
+                <v-icon small>mdi-logout</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>Quản lý thành viên</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </router-link>
           <v-list-item @click="logout" link>
             <v-list-item-icon>
-              <v-icon small>mdi-logout</v-icon>
+              <v-icon small>mdi-account</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>Logout</v-list-item-title>
@@ -54,6 +64,11 @@ export default {
       right: null,
       drawer: false,
     };
+  },
+  computed: {
+    isAdmin: function () {
+      return this.$store.getters.userData.role === "ADMIN";
+    },
   },
   methods: {
     logout: function () {

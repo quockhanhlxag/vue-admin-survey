@@ -6,7 +6,7 @@
         <div class="inner-content">
           <h5 class="text-h5">Danh sách cửa hàng</h5>
           <v-divider></v-divider>
-          <div class="store-table-wrapper">
+          <div class="store-table-wrapper table-wrapper">
             <v-text-field
               v-model="search"
               class="search-field"
@@ -29,7 +29,7 @@
                 <v-dialog v-model="dialogDelete" max-width="500px">
                   <v-card>
                     <v-card-title class="text-h5">Xóa cửa hàng</v-card-title>
-                    <v-card-text>Bạn có chắc muốn xóa cửa hàng</v-card-text>
+                    <v-card-text>Bạn có chắc muốn xóa cửa hàng ?</v-card-text>
                     <v-card-actions>
                       <v-spacer></v-spacer>
                       <v-btn color="blue darken-1" text @click="closeDialog"
@@ -76,7 +76,7 @@
 
 <script>
 import NavDrawer from "../components/NavDrawer";
-import { BASE_URL } from "../services/urls";
+import { BASE_URL } from "../config/urls";
 import request from "../services/requests";
 import { STORE_STATUS } from "../config/constant";
 export default {

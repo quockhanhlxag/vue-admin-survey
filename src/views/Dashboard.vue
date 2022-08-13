@@ -115,7 +115,7 @@
 
 <script>
 import NavDrawer from "../components/NavDrawer";
-import { BASE_URL } from "../services/urls";
+import { BASE_URL } from "../config/urls";
 import request from "../services/requests";
 import PieChart from "../components/PieChart.vue";
 import AuditColChart from "../components/AuditColChart.vue";

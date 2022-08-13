@@ -24,9 +24,25 @@ const routes = [
   },
   {
     path: "/admin/audit",
-    name: "Audit",
+    name: "Survey",
     component: () =>
-      import(/* webpackChunkName: "audit" */ "../views/Survey.vue"),
+      import(/* webpackChunkName: "survey" */ "../views/Survey.vue"),
+  },
+  {
+    path: "/admin/audit/:audit_id",
+    name: "Survey details",
+    component: () =>
+      import(
+        /* webpackChunkName: "survey-details" */ "../views/SurveyDetails.vue"
+      ),
+  },
+  {
+    path: "/admin/user_management",
+    name: "User management",
+    component: () =>
+      import(
+        /* webpackChunkName: "user-management" */ "../views/UserManagement.vue"
+      ),
   },
 ];
 
