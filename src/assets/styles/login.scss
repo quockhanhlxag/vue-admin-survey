@@ -1,0 +1,25 @@
+.login-page {
+  position: absolute;
+  inset: 0px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+
+  .login-form {
+    border-radius: 5px;
+    width: 360px;
+    box-shadow: rgb(0 0 0 / 13%) 0px 0px 1px, rgb(0 0 0 / 20%) 0px 1px 3px;
+  }
+
+  .login-form-header {
+    font-size: 28px;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding: 1.25rem 0.5rem;
+  }
+
+  .login-form-body {
+    padding: 1.25rem;
+  }
+}
